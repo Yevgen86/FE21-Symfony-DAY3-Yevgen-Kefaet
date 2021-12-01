@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="page-header">{{item.name}}</h2>
+
+    <ul class="list-group">
+        <li class="list-group-item">Price: {{item.price}}</li>
+    </ul>
+
+    <p>
+        {{item.description}}
+    </p>
+
+    <a class="btn btn-warning" href="/">Back to Home</a>
+{% endblock %}
