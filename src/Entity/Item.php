@@ -42,6 +42,11 @@ class Item
      */
     private $image;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Status::class)
+     */
+    private $fk_status;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class Item
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getFkStatus(): ?Status
+    {
+        return $this->fk_status;
+    }
+
+    public function setFkStatus(?Status $fk_status): self
+    {
+        $this->fk_status = $fk_status;
 
         return $this;
     }

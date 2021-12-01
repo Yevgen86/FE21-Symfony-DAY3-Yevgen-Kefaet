@@ -1,15 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h2 class="page-header">{{item.name}}</h2>
 
-    <ul class="list-group">
-        <li class="list-group-item">Price: {{item.price}}</li>
-    </ul>
+    <h2 class="page-header mt-4 fw-bold">Details</h2>
 
-    <p>
-        {{item.description}}
-    </p>
 
-    <a class="btn btn-warning" href="/">Back to Home</a>
+    <div class="d-grid gap-2 col-7 mx-auto">
+        <div class="card mt-5 shadow p-3 mb-5 rounded" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ asset('pictures/'~item.image) }}" class="img-fluid rounded-start" alt="{{item.name}}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text"><small class="text-muted">Price: {{ item.price }} €</small></p>
+                        <p class="card-text">{{ item.description }}</p>
+        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-muted">Status: status</li>
+                            <li class="list-group-item text-muted">Image: {{ item.image }}</li>
+                            <li class="list-group-item text-muted">Created at: xx.xx.xx 12:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-warning" href="/">Back</a>
 {% endblock %}
